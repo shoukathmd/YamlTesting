@@ -1,0 +1,7 @@
+[ {
+  "resource" : "Hotel-Create",
+  "sample" : "{\n  'city' : null,\n  'description' : null,\n  'id' : null,\n  'name' : null,\n  'rating' : null\n}"
+}, {
+  "resource" : "Hotel-Update",
+  "sample" : "{\n  'city' : null,\n  'description' : null,\n  'id' : null,\n  'name' : null,\n  'rating' : null\n}"
+} ]
