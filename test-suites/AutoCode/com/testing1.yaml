@@ -19,5 +19,5 @@ authors:
 - "FX Bot"
 category: "UnSecured"
 severity: "Critical"
-inactive: false
+inactive: true
 policies: null
