@@ -1,0 +1,23 @@
+---
+parent: "example_v1_hotels_id"
+name: "ExampleV1HotelsIdGetPathParamInvalidDatatypeId"
+description: "You have to provide a valid hotel ID."
+type: "SUITE"
+endpoint: "/example/v1/hotels/2cnCcd"
+method: "GET"
+auth: "Default"
+headers:
+- "Accept: application/json"
+- "Content-Type: application/json"
+testCases: []
+assertions:
+- "@StatusCode != 401"
+- "@StatusCode != 404"
+tags:
+- "V1"
+authors:
+- "FX Bot"
+category: "Negative"
+severity: "Critical"
+inactive: false
+policies: null

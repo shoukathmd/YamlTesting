@@ -1,0 +1,22 @@
+---
+parent: "example_v1_hotels"
+name: "ExampleV1HotelsPostAuthInvalid"
+description: "Returns the URL of the new resource in the Location header."
+type: "SUITE"
+endpoint: "/example/v1/hotels"
+method: "POST"
+auth: "INVALID_AUTH"
+headers:
+- "Accept: application/json"
+- "Content-Type: application/json"
+testCases: []
+assertions:
+- "@StatusCode != 200"
+tags:
+- "V1"
+authors:
+- "FX Bot"
+category: "UnSecured"
+severity: "Critical"
+inactive: false
+policies: null
