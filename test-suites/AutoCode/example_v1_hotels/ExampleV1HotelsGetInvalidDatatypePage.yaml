@@ -4,7 +4,7 @@ name: "ExampleV1HotelsGetInvalidDatatypePage"
 description: "The list is paginated. You can provide a page number (default 0) and\
   \ a page size (default 100)"
 type: "SUITE"
-endpoint: "/example/v1/hotels?page=IQQuZL"
+endpoint: "/example/v1/hotels?page=6npi35"
 method: "GET"
 auth: "Default"
 headers:
