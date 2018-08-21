@@ -3,7 +3,7 @@ parent: "example_v1_hotels_id"
 name: "ExampleV1HotelsIdGetPathParamInvalidDatatypeId"
 description: "You have to provide a valid hotel ID."
 type: "SUITE"
-endpoint: "/example/v1/hotels/PwD8jl"
+endpoint: "/example/v1/hotels/x6IEBG"
 method: "GET"
 auth: "Default"
 headers:
