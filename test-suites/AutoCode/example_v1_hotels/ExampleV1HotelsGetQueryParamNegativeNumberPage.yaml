@@ -1,0 +1,24 @@
+---
+parent: "example_v1_hotels"
+name: "ExampleV1HotelsGetQueryParamNegativeNumberPage"
+description: "The list is paginated. You can provide a page number (default 0) and\
+  \ a page size (default 100)"
+type: "SUITE"
+endpoint: "/example/v1/hotels?page=-1"
+method: "GET"
+auth: "Default"
+headers:
+- "Accept: application/json"
+- "Content-Type: application/json"
+testCases: []
+assertions:
+- "@StatusCode != 401"
+- "@StatusCode != 404"
+tags:
+- "V1"
+authors:
+- "FX Bot"
+category: "Functional"
+severity: "Critical"
+inactive: false
+policies: null

@@ -1,0 +1,23 @@
+---
+parent: "example_v1_hotels_id"
+name: "ExampleV1HotelsIdDeleteAuthInvalid"
+description: "You have to provide a valid hotel ID in the URL. Once deleted the resource\
+  \ can not be recovered."
+type: "SUITE"
+endpoint: "/example/v1/hotels/{{@Random}}"
+method: "DELETE"
+auth: "INVALID_AUTH"
+headers:
+- "Accept: application/json"
+- "Content-Type: application/json"
+testCases: []
+assertions:
+- "@StatusCode != 200"
+tags:
+- "V1"
+authors:
+- "FX Bot"
+category: "UnSecured"
+severity: "Critical"
+inactive: false
+policies: null

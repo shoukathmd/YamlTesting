@@ -1,0 +1,31 @@
+---
+parent: "example_v1_hotels_id"
+name: "ExampleV1HotelsIdGetPathParamSqlInjectionTimeboundMysqlId"
+description: "You have to provide a valid hotel ID."
+type: "SUITE"
+endpoint: "/example/v1/hotels/{{@MySQLTimeboundSQLInjections}}"
+method: "GET"
+auth: "Default"
+headers:
+- "Accept: application/json"
+- "Content-Type: application/json"
+testCases: []
+assertions:
+- "@ResponseTime < 7000"
+- "@StatusCode != 404"
+tags:
+- "V1"
+authors:
+- "FX Bot"
+category: "SQL_Injection"
+severity: "Critical"
+inactive: false
+policies:
+  initExec: "Request"
+  cleanupExec: "Request"
+  logger: "DEBUG"
+  timeoutSeconds: 300
+  repeatOnFailure: 0
+  repeat: 0
+  repeatModule: "@MySQLTimeboundSQLInjections"
+  repeatDelay: 0
