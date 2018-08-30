@@ -1,28 +1,20 @@
 ---
 parent: ""
 name: "ExampleV1HotelsIdGetPathParamSqlInjectionMysqlId321"
-description: "You have to provide a valid hotel ID.............."
-authors:
-- "FX Bot"
+description: "You have to provide a vali"
+authors: []
 type: "SUITE"
 init: []
 endpoint: "/example/v1/hotels/{{@MySQLSQLInjections}}"
 method: "GET"
 auth: "Default"
-headers:
-- "Accept: application/json"
-- "Content-Type: application/json"
+headers: []
 testCases: []
-assertions:
-- "@ResponseTime < 7000"
-- "@StatusCode != 401"
-- "@StatusCode != 404"
-- "@StatusCode != 500"
+assertions: []
 cleanup: []
 severity: "Critical"
 category: "SQL_Injection"
-tags:
-- "V1"
+tags: []
 inactive: false
 policies:
   initExec: "Request"
