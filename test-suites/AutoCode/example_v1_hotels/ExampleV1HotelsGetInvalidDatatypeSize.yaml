@@ -3,7 +3,11 @@ parent: "example_v1_hotels"
 name: "ExampleV1HotelsGetInvalidDatatypeSize"
 description: "The list is paginated. You can provide a page number (default 0) and\
   \ a page size (default 100)"
+authors:
+- "FX Bot"
+- "FX Bot1"
 type: "SUITE"
+init: []
 endpoint: "/example/v1/hotels?size=kc0HFi"
 method: "GET"
 auth: "Default"
@@ -14,11 +18,10 @@ testCases: []
 assertions:
 - "@StatusCode != 401"
 - "@StatusCode != 404"
+cleanup: []
+severity: "Critical"
+category: "Negative"
 tags:
 - "V1"
-authors:
-- "FX Bot"
-category: "Negative"
-severity: "Critical"
 inactive: false
 policies: null
