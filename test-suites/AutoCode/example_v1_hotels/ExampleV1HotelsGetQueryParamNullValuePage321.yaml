@@ -4,25 +4,18 @@ name: "ExampleV1HotelsGetQueryParamNullValuePage321"
 description: "The list is paginated. You can provide a page number (default 0) and\
   \ a page size (default 100)"
 authors:
-- "FX Bot"
+- "Mohammed Shoukath Ali"
 type: "SUITE"
 init: []
 endpoint: "/example/v1/hotels"
 method: "GET"
 auth: "Default"
-headers:
-- "Accept: application/json"
-- "Content-Type: application/json"
+headers: []
 testCases: []
-assertions:
-- "@StatusCode != 200"
-- "@StatusCode != 401"
-- "@StatusCode != 404"
-- "@StatusCode != 500"
+assertions: []
 cleanup: []
 severity: "Critical"
 category: "Negative"
-tags:
-- "V1"
+tags: []
 inactive: false
 policies: null
