@@ -1,0 +1,28 @@
+---
+parent: ""
+name: "testing32567"
+description: "The list is paginated. You can provide a page number (default 0) and\
+  \ a page size (default 100)"
+authors:
+- "FX Bot"
+type: "SUITE"
+init: []
+endpoint: "/example/v1/hotels?page="
+method: "GET"
+auth: "Default"
+headers:
+- "Accept: application/json"
+- "Content-Type: application/json"
+testCases: []
+assertions:
+- "@StatusCode != 200"
+- "@StatusCode != 401"
+- "@StatusCode != 404"
+- "@StatusCode != 500"
+cleanup: []
+severity: "Critical"
+category: "Negative"
+tags:
+- "V1"
+inactive: false
+policies: null
