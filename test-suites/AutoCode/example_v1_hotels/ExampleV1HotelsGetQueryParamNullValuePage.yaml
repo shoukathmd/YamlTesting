@@ -6,6 +6,7 @@ description: "The list is paginated. You can provide a page number (default 0) a
 authors:
 - "FX Bot"
 - "FX Bot2"
+- "FX Bot3"
 type: "SUITE"
 init: []
 endpoint: "/example/v1/hotels"
