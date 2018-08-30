@@ -5,6 +5,7 @@ description: "The list is paginated. You can provide a page number (default 0) a
   \ a page size (default 100)"
 authors:
 - "Mohammed Shoukath Ali"
+- "Testing"
 type: "SUITE"
 init: []
 endpoint: "/example/v1/hotels"
