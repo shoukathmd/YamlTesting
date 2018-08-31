@@ -8,6 +8,7 @@ authors:
 type: "SUITE"
 init:
 - "InitAbstractSuite1"
+- "InitAbstractSuite2"
 endpoint: "/projects"
 method: "POST"
 auth: "Default"
