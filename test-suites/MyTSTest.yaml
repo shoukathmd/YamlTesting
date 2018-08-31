@@ -1,0 +1,39 @@
+---
+parent: ""
+name: "MyTSTest"
+description: null
+authors:
+- "Developer 1"
+- "Developer 2"
+type: "SUITE"
+init:
+- "InitAbstractSuite1"
+endpoint: "/projects"
+method: "POST"
+auth: "Default"
+headers:
+- "Content-Type: application/json"
+testCases:
+- id: 1
+  body: "{ \"name\": \"{{@Faker.fullname}}\", \"description\": \"desc\" }"
+  inactive: false
+- id: 2
+  body: "{ \"name\": \"{{@Faker.fullname}}\", \"description\": \"desc\" }"
+  inactive: false
+assertions:
+- "@StatusCode == 200"
+- "@ResponseTime <= 1000"
+- "@ResponseSize <= 1024"
+- "@Response.errors == false"
+- "@Response.data.name == @Request.name"
+- "@Response.data.url == @Request.url"
+- "@Response.data.account.id == @Request.account.id"
+cleanup:
+- "CleanUpAbstract1"
+- "CleanUpAbstract2"
+severity: "Major"
+category: "Functional"
+tags:
+- "V2"
+inactive: false
+policies: null
