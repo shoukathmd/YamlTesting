@@ -31,7 +31,7 @@ assertions:
 - "@Response.data.account.id == @Request.account.id"
 cleanup:
 - "CleanUpAbstract1"
-- "CleanUpAbstract2"
+- "CleanUpAbstract2345"
 severity: "Major"
 category: "Functional"
 tags:
