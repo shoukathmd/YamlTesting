@@ -1,6 +1,6 @@
 ---
 genPolicy: "Create"
-openAPISpec: "https://ip/v2/api-docs"
+openAPISpec: "None"
 generators:
 - type: "no_params"
   assertions:
