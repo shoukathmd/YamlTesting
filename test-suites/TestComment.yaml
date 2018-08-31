@@ -1,46 +1,104 @@
---- "---\n# Note - The below property order is not important.\n\n# Test Suite should\
-  \ be unique per project.\nname: TestComment\n\n# Folder path\n# parent: com.company.project.feature.functional\n\
-  \n# Optional - one or more author names\nauthors:\n  - Developer 1\n  #- Developer\
-  \ 2\n\n# Suite type - SUITE or ABSTRACT\n#   ABSTRACT - is not directly executed\
-  \ but is injected into other suite's 'init' & 'cleanup' sections.\ntype: SUITE\n\
-  \n# Optional - one or more Abstract suites\ninit:\n  - InitAbstractSuite1\n  #-\
-  \ InitAbstractSuite2\n\n# Mandatory - API endpoint path.\nendpoint: /projects\n\n\
-  # Mandatory - Represents the API http method (GET, PUT, POST, DELETE etc)\nmethod:\
-  \ POST\n\n# Optional - What authentication to use when calling the endpoint. 'Anonymous'\
-  \ means no authentication is used. There is always a 'Default' auth type.\n# For\
-  \ more advance test-cases you can create a new auth type on your env and refer it's\
-  \ name here. e.g. 'Admin' etc.\nauth: Default\n\n# Optional Represents request headers\n\
-  # Note: These two headers are automatically set ('Content-Type: application/json',\
-  \ 'Accept: application/json')\nheaders:\n  #- 'Content-Type: application/json'\n\
-  \n# One ore more test cases when using POST, PUT, & DELETE methods.\n# Every test-case\
-  \ has unique id and a body (json) properties.\n# Data-Injection in-build keywords\
-  \ (@Random, @RandomAlphabetic, @RandomAlphanumeric, @RandomNumeric, @Date, @RandomUUID,\
-  \ @Vault)\n\ntestCases:\n  - id: 1\n    body: '{\n        \"name\": \"{{@Faker.fullname}}\"\
-  ,\n        \"description\": \"desc\"\n     }'\n  - id: 2\n    body: '{\n       \
-  \ \"name\": \"{{@Faker.fullname}}\",\n        \"description\": \"desc\"\n     }'\n\
-  \n\n# Assertions - One or more.\n# All needs to be true for the test-case to pass.\n\
-  # In-build variables (@Request, @StatusCode, @ResponseHeaders, @Response, @NULL,\
-  \ @EMPTY, @ResponseTime, @ResponseSize, @Faker etc)\n# Refer to Faker documentation\
-  \ https://faker.readthedocs.io/en/master/\n# Refer to JSONPath documentation https://github.com/json-path/JsonPath\n\
-  # Refer to FX documentation https://fxlabs.io/documentation/\n# Refer to Vault page\
-  \ https://cloud.fxlabs.io/#/app/vault\n\n## Comparison keywords (\"- ==\", \"==IgnoreCase\"\
-  , \"!=\", \">\", \"<\", \">=\", \"<=\", \"=~\", \"!=~\", \"startsWith\", \"startsWithIgnoreCase\"\
-  , \"endsWith\", \"endsWithIgnoreCase\")\n\n## Transformation keywords (trim, trimToNull,\
-  \ trimToEmpty, truncate, strip, indexOf, indexOfIgnoreCase, lastIndexOf, left, right,\
-  \ substringBefore, substringAfter, substringBeforeLast, substringAfterLast\n  #\
-  \ substringBetween, removeStart, removeStartIgnoreCase, removeEnd, removeEndIgnoreCase,\
-  \ remove, removeIgnoreCase, removeAll, removeFirst, removePattern, chomp, chop,\
-  \ repeat, rightPad, leftPad, upperCase, lowerCase, capitalize, uncapitalize, reverse)\n\
-  \nassertions:\n  - \"@StatusCode == 200\"\n  - \"@ResponseTime <= 1000\"\n  - \"\
-  @ResponseSize <= 1024\"\n  - \"@Response.errors == false\"\n  - \"@Response.data.name\
-  \ == @Request.name\"\n  - \"@Response.data.url == @Request.url\"\n  - \"@Response.data.account.id\
-  \ == @Request.account.id\" # JSONPath example\n\n\n# Optional - Executes one or\
-  \ more abstract suites per request or per suite.\ncleanup:\n  - CleanUpAbstract1\n\
-  \  #- CleanUpAbstract2\n\n# This attribute is used for auto bug triage and filing\
-  \ (Major, Critical, Minor etc)\nseverity: Major\n\n# Test category e.g. (Functional,\
-  \ SQL_Injection etc)\ncategory: Functional\n\n# Jobs can filter test-suites based\
-  \ on the tags.\ntags:\n- V2\n\n# Optional policies\npolicies:\n  logger: DEBUG #\
-  \ DEBUG | ERROR\n  #repeatOnFailure: 0\n  #repeat: 0\n  #repeatDelay: 3000\n  #timeoutSeconds:\
-  \ 5\n  # Control if init scripts are executed once for test-case or once per script\
-  \ (Request, Suite)\n  #initExec: Request\n  # Control if cleanup scripts are executed\
-  \ once for test-case or once per script (Request, Suite)\n  #cleanupExec: Request\n"
+---
+# Note - The below property order is not important.
+
+# Test Suite should be unique per project.
+name: TestComment
+
+# Folder path
+# parent: com.company.project.feature.functional
+
+# Optional - one or more author names
+authors:
+  - Developer 1
+  #- Developer 2
+
+# Suite type - SUITE or ABSTRACT
+#   ABSTRACT - is not directly executed but is injected into other suite's 'init' & 'cleanup' sections.
+type: SUITE
+
+# Optional - one or more Abstract suites
+init:
+  - InitAbstractSuite1
+  #- InitAbstractSuite2
+
+# Mandatory - API endpoint path.
+endpoint: /projects
+
+# Mandatory - Represents the API http method (GET, PUT, POST, DELETE etc)
+method: POST
+
+# Optional - What authentication to use when calling the endpoint. 'Anonymous' means no authentication is used. There is always a 'Default' auth type.
+# For more advance test-cases you can create a new auth type on your env and refer it's name here. e.g. 'Admin' etc.
+auth: Default
+
+# Optional Represents request headers
+# Note: These two headers are automatically set ('Content-Type: application/json', 'Accept: application/json')
+headers:
+  #- 'Content-Type: application/json'
+
+# One ore more test cases when using POST, PUT, & DELETE methods.
+# Every test-case has unique id and a body (json) properties.
+# Data-Injection in-build keywords (@Random, @RandomAlphabetic, @RandomAlphanumeric, @RandomNumeric, @Date, @RandomUUID, @Vault)
+
+testCases:
+  - id: 1
+    body: '{
+        "name": "{{@Faker.fullname}}",
+        "description": "desc"
+     }'
+  - id: 2
+    body: '{
+        "name": "{{@Faker.fullname}}",
+        "description": "desc"
+     }'
+
+
+# Assertions - One or more.
+# All needs to be true for the test-case to pass.
+# In-build variables (@Request, @StatusCode, @ResponseHeaders, @Response, @NULL, @EMPTY, @ResponseTime, @ResponseSize, @Faker etc)
+# Refer to Faker documentation https://faker.readthedocs.io/en/master/
+# Refer to JSONPath documentation https://github.com/json-path/JsonPath
+# Refer to FX documentation https://fxlabs.io/documentation/
+# Refer to Vault page https://cloud.fxlabs.io/#/app/vault
+
+## Comparison keywords ("- ==", "==IgnoreCase", "!=", ">", "<", ">=", "<=", "=~", "!=~", "startsWith", "startsWithIgnoreCase", "endsWith", "endsWithIgnoreCase")
+
+## Transformation keywords (trim, trimToNull, trimToEmpty, truncate, strip, indexOf, indexOfIgnoreCase, lastIndexOf, left, right, substringBefore, substringAfter, substringBeforeLast, substringAfterLast
+  # substringBetween, removeStart, removeStartIgnoreCase, removeEnd, removeEndIgnoreCase, remove, removeIgnoreCase, removeAll, removeFirst, removePattern, chomp, chop, repeat, rightPad, leftPad, upperCase, lowerCase, capitalize, uncapitalize, reverse)
+
+assertions:
+  - "@StatusCode == 200"
+  - "@ResponseTime <= 1000"
+  - "@ResponseSize <= 1024"
+  - "@Response.errors == false"
+  - "@Response.data.name == @Request.name"
+  - "@Response.data.url == @Request.url"
+  - "@Response.data.account.id == @Request.account.id" # JSONPath example
+
+
+# Optional - Executes one or more abstract suites per request or per suite.
+cleanup:
+  - CleanUpAbstract1
+  #- CleanUpAbstract2
+
+# This attribute is used for auto bug triage and filing (Major, Critical, Minor etc)
+severity: Major
+
+# Test category e.g. (Functional, SQL_Injection etc)
+category: Functional
+
+# Jobs can filter test-suites based on the tags.
+tags:
+- V2
+
+# Optional policies
+policies:
+  logger: DEBUG # DEBUG | ERROR
+  #repeatOnFailure: 0
+  #repeat: 0
+  #repeatDelay: 3000
+  #timeoutSeconds: 5
+  # Control if init scripts are executed once for test-case or once per script (Request, Suite)
+  #initExec: Request
+  # Control if cleanup scripts are executed once for test-case or once per script (Request, Suite)
+  #cleanupExec: Request
