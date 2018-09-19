@@ -10,7 +10,7 @@ name: TestComment123
 # Optional - one or more author names
 authors:
   - Developer 1
-  #- Developer 2
+  - Developer 2
 
 # Suite type - SUITE or ABSTRACT
 #   ABSTRACT - is not directly executed but is injected into other suite's 'init' & 'cleanup' sections.
